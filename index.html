@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+      
+      <!-- Hiroマーカーを認識したら発動 -->
+      <a-marker preset="hiro">
+        
+        <!-- 2D画像を表示し、上下に動かすアニメーションを追加 -->
+        <a-image 
+          src="static/images/test.png" 
+          position="0 0.5 0" 
+          rotation="-90 0 0" 
+          scale="1 1 1"
+          animation="property: position; to: 0 0.8 0; dir: alternate; dur: 1000; loop: true; easing: easeInOutSine">
+        </a-image>
+
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
