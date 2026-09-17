@@ -1,29 +1,51 @@
+```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://aframe.io"></script>
-    <script src="https://githack.com"></script>
-  </head>
-  <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
-      
-      <!-- 🛠️ 修正点: あなたのGitHubのファイル名「pattern.patt」に完全に合わせました -->
-      <a-marker type="pattern" url="pattern.patt">
-        
-        <!-- 2D画像を表示し、上下に動かすアニメーションを追加 -->
-        <a-image 
-          src="static/images/test.png" 
-          position="0 0.5 0" 
-          rotation="-90 0 0" 
-          scale="1 1 1"
-          animation="property: position; to: 0 0.8 0; dir: alternate; dur: 1000; loop: true; easing: easeInOutSine">
-        </a-image>
+<head>
+  <meta charset="UTF-8">
 
-      </a-marker>
+  <!-- A-Frame -->
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
 
-      <!-- 🛠️ 修正点: マーカーを認識するために必須のカメラタグを追加しました -->
-      
-      
-    </a-scene>
-  </body>
+  <!-- AR.js -->
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+  <a-scene
+    embedded
+    arjs="sourceType: webcam; debugUIEnabled: false;">
+
+    <!-- オリジナルマーカー -->
+    <a-marker
+      type="pattern"
+      url="pattern.patt">
+
+      <!-- 表示する2D画像 -->
+      <a-image
+        src="static/images/test.png"
+        position="0 0.5 0"
+        rotation="-90 0 0"
+        scale="1 1 1"
+        animation="
+          property: position;
+          to: 0 0.8 0;
+          dir: alternate;
+          dur: 1000;
+          loop: true;
+          easing: easeInOutSine;
+        ">
+      </a-image>
+
+    </a-marker>
+
+    <!-- カメラ -->
+    <a-entity camera></a-entity>
+
+  </a-scene>
+
+</body>
 </html>
+```
+
